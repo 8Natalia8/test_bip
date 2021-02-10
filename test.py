@@ -4,7 +4,6 @@ Created on 5 нояб. 2020 г.
 @author: nataa
 '''
 def help():
-
    print("---------------------------------\n")
    print("1) для вывода подстановки на экран\n")
    print("2) для вывода таблицы разностей\n")
@@ -12,6 +11,7 @@ def help():
    print("0) для выхода\n")
    print("Любую  цифру для помощи\n")
    print("---------------------------------\n")
+
 def show(table):
     print(end="         ")
     for i in range(16):
@@ -25,6 +25,7 @@ def show(table):
             print(i, " |   ", table[i])
         else:
             print(i, "|   ", table[i])
+
 def create_table_d(S):
     table = [[0 for i in range(16)] for j in range(16)]
     for alpha in range (16):
@@ -33,6 +34,7 @@ def create_table_d(S):
                 if (S[x ^ alpha]) == (S[x] ^ beta):
                     table[alpha][beta]+=1
     return table
+
 def  count_bit(num):
     bit = 0
     while num != 0:
@@ -65,10 +67,12 @@ def create_weight(S,t):
         print("")
         for j in range(16):
             print(t_weight[i][j][0],end=" ")
+
 if __name__ == "__main__":
     S=[10, 0, 11, 5, 7, 12, 13, 4, 9, 6, 15, 14, 1, 2, 8, 3]
     help()
-    while(1):
+
+    while True:
         task = int(input())
         if (task==1):
             print("подстановка: S = {}".format(S))
